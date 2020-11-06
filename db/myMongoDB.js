@@ -4,6 +4,7 @@ const { MongoClient } = require("mongodb");
 function MyDB() {
   const myDB = {};
   const uri = process.env.MONGODB_URI || require("./mongoDetails.js");
+  //should this connect to mongodb default port?
 
   myDB.getPosts = async () => {
     const client = new MongoClient(uri, { useUnifiedTopology: true });
